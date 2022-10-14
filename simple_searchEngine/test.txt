@@ -1,0 +1,14 @@
+<div class="VwiC3b yXK7lf MUxGbd yDYNvb lyLwlc lEBKkf" style="-webkit-line-clamp:2"><span>The official home of the <em>Python</em> Programming Language.</span></div>
+<div class="VwiC3b yXK7lf MUxGbd yDYNvb lyLwlc lEBKkf" style="-webkit-line-clamp:2"><span><em>Python</em> is an interpreted high-level general-purpose programming language. Its design philosophy emphasizes code readability with its use of significant&nbsp;...</span></div>
+
+{%for i in results%}
+            {%for j in mdes%}
+                {% if loop.first %}
+                    <a href="{{i}}">{{i}}</a><br>
+                    <p>{{j}}</p>
+                {%endif%}
+            {%endfor%}
+
+https://www.google.com/search?q={python}&num={5}&hl={en}
+
+        {%endfor%}  

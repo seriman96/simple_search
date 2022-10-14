@@ -1,0 +1,107 @@
+    <!--<ytd-button-renderer class="style-scope ytd-masthead style-default size-default" use-keyboard-focused="" button-renderer="true" is-icon-button="" has-no-text="">
+        <a class="yt-simple-endpoint style-scope ytd-button-renderer" tabindex="-1">
+            <yt-icon-button id="button" class="style-scope ytd-button-renderer style-default size-default" touch-feedback=""> -->
+                <!--css-build:shady-->
+                <!--<button id="button" class="style-scope yt-icon-button" aria-label="Effectuer une recherche vocale">
+                    <yt-icon class="style-scope ytd-button-renderer">
+                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                            <g class="style-scope yt-icon">
+                                <path d="M12 3C10.34 3 9 4.37 9 6.07V11.93C9 13.63 10.34 15 12 15C13.66 15 15 13.63 15 11.93V6.07C15 4.37 13.66 3 12 3ZM18.5 12H17.5C17.5 15.03 15.03 17.5 12 17.5C8.97 17.5 6.5 15.03 6.5 12H5.5C5.5 15.24 7.89 17.93 11 18.41V21H13V18.41C16.11 17.93 18.5 15.24 18.5 12Z" class="style-scope yt-icon"></path></g></svg>-->
+                                <!--css-build:shady-->
+                            <!--</yt-icon></button>
+                            <yt-interaction id="interaction" class="circular style-scope yt-icon-button">-->
+                                <!--css-build:shady-->
+                                <!--<div class="stroke style-scope yt-interaction"></div>
+                                    <div class="fill style-scope yt-interaction"></div></yt-interaction></yt-icon-button>
+                                    <tp-yt-paper-tooltip class="style-scope ytd-button-renderer" role="tooltip" tabindex="-1" style="inset: 56px auto auto 601.894px;">
+                                        --><!--css-build:shady-->
+                                        <!--<div id="tooltip" class="style-scope tp-yt-paper-tooltip hidden">Effectuer une recherche vocal</div>
+                                    </tp-yt-paper-tooltip>
+        </a>
+    </ytd-button-renderer>-->
+
+ /*#voice-search-button.ytd-masthead .ytd-masthead[is-icon-button], #buttons.ytd-masthead .ytd-masthead[is-icon-button] {
+    color: var(--yt-spec-icon-active-other);
+    outline: none;
+    }
+
+ytd-button-renderer[is-icon-button][has-no-text] {
+    font-size: 0;
+}
+ytd-button-renderer.style-text[is-icon-button], ytd-button-renderer.style-default[is-icon-button], ytd-button-renderer.style-opacity[is-icon-button] {
+    color: var(--yt-spec-icon-inactive);
+}
+ytd-button-renderer[is-icon-button]:not([style-action-button]) {
+    font-size: var(--ytd-caption_-_font-size);
+    line-height: var(--ytd-caption_-_line-height);
+    font-weight: var(--ytd-caption_-_font-weight);
+    letter-spacing: var(--ytd-caption_-_letter-spacing);
+    text-transform: var(--ytd-caption_-_text-transform);
+}
+ytd-button-renderer[is-icon-button] {
+    color: var(--yt-button-color,var(--yt-spec-icon-inactive));
+}
+ytd-button-renderer {
+    display: inline-block;
+    text-transform: uppercase;
+}
+ytd-button-renderer {
+    vertical-align: middle;
+    white-space: nowrap;
+    font-size: var(--ytd-tab-system_-_font-size);
+    font-weight: var(--ytd-tab-system_-_font-weight);
+    letter-spacing: var(--ytd-tab-system_-_letter-spacing);
+    text-transform: var(--ytd-tab-system_-_text-transform);
+}
+ytd-button-renderer {
+    --paper-button-ink-color: var(--yt-spec-badge-chip-background);
+    --yt-formatted-string-deemphasize-color: var(--yt-spec-static-brand-white);
+    --yt-formatted-string-deemphasize_-_margin-left: var(--ytd-margin-base);
+    --yt-formatted-string-deemphasize_-_display: initial;
+}
+ytd-button-renderer{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin-top: -200px;
+}*/
+
+
+<!--<div>
+        <?php
+            $name = "seremoussanisamou@gmail.com";
+            $name1 = "manssamoussa@gmail.com";
+            $pass = "Annee@2021";
+            $pass1 = "Annee@2020";
+            $n = $_POST['name'];
+            $p = $_POST['pass'];
+            if(isset($n) and isset($p)){
+                if(($name == $n OR $name1 == $n) and ($pass == $p OR $pass1 == $p)){
+
+                }
+            }
+        ?>
+    </div>-->
+
+
+###########
+	myclient = pm.MongoClient("mongodb://127.0.0.1:27017/")
+	
+	db = myclient["Myengine"]
+	colect = db["User"]
+	lst = colect.find({},{"_id":0})
+	dt = pd.DataFrame(list(lst))
+	username = dt['username']
+	password = dt['password']
+	if request.method == "POST":
+		n = request.form["name"]
+		p = request.form["pass"]
+		if n in username and p in password:
+			return render_template("search.html")
+		else:
+			return render_template("User.html")
+
+
+@app.route("/")
+def user():
+	return render_template("User.html")
